@@ -1,3 +1,0 @@
-const jumpUrl = (url) => {
-  window.location = url || 'info.html'
-}
