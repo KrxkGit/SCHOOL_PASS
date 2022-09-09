@@ -1,0 +1,40 @@
+window.onload = () => {
+  document.querySelector('input[name=sOutAddress]').value =
+    localStorage.getItem('place')
+  document.querySelector('textarea').innerText = localStorage.getItem('reason')
+  document.querySelector('.name_input').value = localStorage.getItem('name')
+  document.querySelector('.number_input').value = localStorage.getItem('number')
+  document.querySelector('.school_input').value =
+    localStorage.getItem('school') || '学院'
+  document.querySelector('.grade_input').value =
+    localStorage.getItem('grade') || '2019'
+  document.querySelector('.type_input').value =
+    localStorage.getItem('type') || '本科生'
+}
+
+const submit = () => {
+  const place = document.querySelector('.info_list input').value
+  const reason = document.querySelector('textarea').value
+  const name = document.querySelector('.name_input').value
+  const number = document.querySelector('.number_input').value
+  const school = document.querySelector('.school_input').value
+  const grade = document.querySelector('.grade_input').value
+  const type = document.querySelector('.type_input').value
+
+  localStorage.setItem('place', place)
+  localStorage.setItem('reason', reason)
+  localStorage.setItem('name', name)
+  localStorage.setItem('number', number)
+  localStorage.setItem('school', school)
+  localStorage.setItem('grade', grade)
+  localStorage.setItem('type', type)
+
+  window.location = 'index.html'
+}
+
+const updateGrade = () => {
+  const number = document.querySelector('.number_input').value
+  const grade = number.slice(0, 4)
+
+  document.querySelector('.grade_input').value = grade
+}
